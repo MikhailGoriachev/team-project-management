@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PostalService" Class="PostalServiceDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Db\PostalService.mdf;Integrated Security=True" SettingsObjectName="PostalDb.Properties.Settings" SettingsPropertyName="PostalServiceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Addresses" Member="Addresses">
+    <Type Name="Addresses">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdStreet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Building" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IdDistrict" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Addresses_Subscribers" Member="Subscribers" ThisKey="Id" OtherKey="IdAddress" Type="Subscribers" />
+      <Association Name="Districts_Addresses" Member="Districts" ThisKey="IdDistrict" OtherKey="Id" Type="Districts" IsForeignKey="true" />
+      <Association Name="Streets_Addresses" Member="Streets" ThisKey="IdStreet" OtherKey="Id" Type="Streets" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subscribes" Member="Subscribes">
+    <Type Name="Subscribes">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdSubscriber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPublication" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Duration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Publications_Subscribes" Member="Publications" ThisKey="IdPublication" OtherKey="Id" Type="Publications" IsForeignKey="true" />
+      <Association Name="Subscribers_Subscribes" Member="Subscribers" ThisKey="IdSubscriber" OtherKey="Id" Type="Subscribers" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Districts" Member="Districts">
+    <Type Name="Districts">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdPostman" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Districts_Addresses" Member="Addresses" ThisKey="Id" OtherKey="IdDistrict" Type="Addresses" />
+      <Association Name="Postmans_Districts" Member="Postmans" ThisKey="IdPostman" OtherKey="Id" Type="Postmans" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Persons" Member="Persons">
+    <Type Name="Persons">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="Patronymic" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Association Name="Persons_Postmans" Member="Postmans" ThisKey="Id" OtherKey="IdPerson" Type="Postmans" />
+      <Association Name="Persons_Subscribers" Member="Subscribers" ThisKey="Id" OtherKey="IdPerson" Type="Subscribers" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Postmans" Member="Postmans">
+    <Type Name="Postmans">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdPerson" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Postmans_Districts" Member="Districts" ThisKey="Id" OtherKey="IdPostman" Type="Districts" />
+      <Association Name="Persons_Postmans" Member="Persons" ThisKey="IdPerson" OtherKey="Id" Type="Persons" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Publications" Member="Publications">
+    <Type Name="Publications">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="IdPubType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PubIndex" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Publications_Subscribes" Member="Subscribes" ThisKey="Id" OtherKey="IdPublication" Type="Subscribes" />
+      <Association Name="PubTypes_Publications" Member="PubTypes" ThisKey="IdPubType" OtherKey="Id" Type="PubTypes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PubTypes" Member="PubTypes">
+    <Type Name="PubTypes">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="PubTypes_Publications" Member="Publications" ThisKey="Id" OtherKey="IdPubType" Type="Publications" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Streets" Member="Streets">
+    <Type Name="Streets">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Streets_Addresses" Member="Addresses" ThisKey="Id" OtherKey="IdStreet" Type="Addresses" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subscribers" Member="Subscribers">
+    <Type Name="Subscribers">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdPerson" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdAddress" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubAddress" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Subscribers_Subscribes" Member="Subscribes" ThisKey="Id" OtherKey="IdSubscriber" Type="Subscribes" />
+      <Association Name="Addresses_Subscribers" Member="Addresses" ThisKey="IdAddress" OtherKey="Id" Type="Addresses" IsForeignKey="true" />
+      <Association Name="Persons_Subscribers" Member="Persons" ThisKey="IdPerson" OtherKey="Id" Type="Persons" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

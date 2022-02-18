@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PostalService">
+  <DataContextMoniker Name="/PostalServiceDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1630f332-6e64-4e57-9165-8c6fbea4520a" absoluteBounds="3.5, 2.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PostalServiceDataContext/Addresses" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93d45098-3fbb-4677-bdfb-e0ee4ee1f0b2" absoluteBounds="3.5150000000000006, 3.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="229b9e6d-dd79-443b-b54f-bcc329d66e3c" absoluteBounds="0.75, 5.25, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/PostalServiceDataContext/Subscribes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a7ab96a-b59d-4293-b22e-cce7b2694ed3" absoluteBounds="0.76500000000000057, 5.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b329c7eb-4e35-4756-b0bb-b22a25525856" absoluteBounds="6.375, 1.25, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/PostalServiceDataContext/Districts" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0cea479d-26dc-46f0-903e-7d116cce23d9" absoluteBounds="6.39, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b5ff6e91-a5a2-41c4-920d-ebff1726b66b" absoluteBounds="0.75, 0.5, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/PostalServiceDataContext/Persons" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9831ad40-b1a5-4261-9a12-fd4ac55f88f3" absoluteBounds="0.76500000000000012, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6620317b-3a47-4b88-8b61-e80fe34aa452" absoluteBounds="3.5, 0.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/PostalServiceDataContext/Postmans" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b18d019e-291f-40c9-8f3c-9ada939744e5" absoluteBounds="3.5150000000000006, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12554f7a-6b2e-4d94-afe6-e4d0be0383c4" absoluteBounds="3.5, 5.25, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/PostalServiceDataContext/Publications" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31b509be-0e08-4b2c-b737-0a8a2365ceaf" absoluteBounds="3.5150000000000006, 5.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3dfb8018-2506-46a7-a62a-aa24bd925997" absoluteBounds="6.75, 5.625, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PostalServiceDataContext/PubTypes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73d6749c-e6e8-4995-9e96-df4d95b9c044" absoluteBounds="6.7650000000000006, 6.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3fafab92-ee05-4115-8c83-faa18217c5a8" absoluteBounds="6.75, 3.5, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/PostalServiceDataContext/Streets" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd5604c6-b6bc-46c7-856b-8a68f688970e" absoluteBounds="6.7650000000000006, 3.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6bfc6484-c7ee-46f1-be28-15ec199a673d" absoluteBounds="0.75, 2.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PostalServiceDataContext/Subscribers" />
+      <nestedChildShapes>
+        <elementListCompartment Id="584c0e02-c30e-4d04-98f6-f99e1f867efe" absoluteBounds="0.76500000000000057, 3.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.53125 : 2.44399251302083); (6.53125 : 3.09375); (5.5 : 3.09375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PostalServiceDataContext/Districts/Districts_Addresses" />
+      <nodes>
+        <classShapeMoniker Id="b329c7eb-4e35-4756-b0bb-b22a25525856" />
+        <classShapeMoniker Id="1630f332-6e64-4e57-9165-8c6fbea4520a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.47199625651042); (6.375 : 1.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PostalServiceDataContext/Postmans/Postmans_Districts" />
+      <nodes>
+        <classShapeMoniker Id="6620317b-3a47-4b88-8b61-e80fe34aa452" />
+        <classShapeMoniker Id="b329c7eb-4e35-4756-b0bb-b22a25525856" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.09699625651042); (3.5 : 1.09699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PostalServiceDataContext/Persons/Persons_Postmans" />
+      <nodes>
+        <classShapeMoniker Id="b5ff6e91-a5a2-41c4-920d-ebff1726b66b" />
+        <classShapeMoniker Id="6620317b-3a47-4b88-8b61-e80fe34aa452" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 6.13544840494792); (2.75 : 6.13544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PostalServiceDataContext/Publications/Publications_Subscribes" />
+      <nodes>
+        <classShapeMoniker Id="12554f7a-6b2e-4d94-afe6-e4d0be0383c4" />
+        <classShapeMoniker Id="229b9e6d-dd79-443b-b54f-bcc329d66e3c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.75 : 6.22199625651042); (5.5 : 6.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PostalServiceDataContext/PubTypes/PubTypes_Publications" />
+      <nodes>
+        <classShapeMoniker Id="3dfb8018-2506-46a7-a62a-aa24bd925997" />
+        <classShapeMoniker Id="12554f7a-6b2e-4d94-afe6-e4d0be0383c4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.75 : 3.91429768880208); (5.5 : 3.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PostalServiceDataContext/Streets/Streets_Addresses" />
+      <nodes>
+        <classShapeMoniker Id="3fafab92-ee05-4115-8c83-faa18217c5a8" />
+        <classShapeMoniker Id="1630f332-6e64-4e57-9165-8c6fbea4520a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 4.32859537760417); (1.75 : 5.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PostalServiceDataContext/Subscribers/Subscribers_Subscribes" />
+      <nodes>
+        <classShapeMoniker Id="6bfc6484-c7ee-46f1-be28-15ec199a673d" />
+        <classShapeMoniker Id="229b9e6d-dd79-443b-b54f-bcc329d66e3c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 3.53929768880208); (2.75 : 3.53929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PostalServiceDataContext/Addresses/Addresses_Subscribers" />
+      <nodes>
+        <classShapeMoniker Id="1630f332-6e64-4e57-9165-8c6fbea4520a" />
+        <classShapeMoniker Id="6bfc6484-c7ee-46f1-be28-15ec199a673d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 2.07859537760417); (1.75 : 2.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PostalServiceDataContext/Persons/Persons_Subscribers" />
+      <nodes>
+        <classShapeMoniker Id="b5ff6e91-a5a2-41c4-920d-ebff1726b66b" />
+        <classShapeMoniker Id="6bfc6484-c7ee-46f1-be28-15ec199a673d" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
